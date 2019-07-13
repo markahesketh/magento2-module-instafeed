@@ -1,0 +1,17 @@
+<div id="instafeed<?php echo $block->getId() ?>" class="instafeed instablock<?php echo $block->getId() ?> row">
+    <div id="instablock<?php echo $block->getId() ?>content"></div>
+</div>
+<script>
+    require(['instafeed'], function (Instafeed) {
+        const feed = new Instafeed({
+            accessToken: "<?php echo $block->getAccessToken(); ?>",
+            get: 'user',
+            limit: <?php echo $block->getInstafeedLimit(); ?>,
+            links: true,
+            target: 'instablock<?php echo $block->getId() ?>content',
+            template: '<?php echo $block->getInstafeedTemplate(); ?>',
+            userId: '<?php echo $block->getUserId(); ?>'
+        });
+        feed.run();
+    });
+</script>

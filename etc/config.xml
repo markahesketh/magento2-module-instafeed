@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <markhesketh_instafeed>
+            <account_info>
+                <enabled>0</enabled>
+                <user_id/>
+                <access_token/>
+            </account_info>
+            <feed_display>
+                <instafeed_limit>8</instafeed_limit>
+                <instafeed_template><![CDATA[<div>
+    <a href="{{link}}"><img src="{{image}}" /></a>
+</div>]]></instafeed_template>
+            </feed_display>
+        </markhesketh_instafeed>
+    </default>
+</config>

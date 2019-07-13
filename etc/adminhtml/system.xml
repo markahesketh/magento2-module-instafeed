@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<section id="markhesketh_instafeed" translate="label"  sortOrder="110" showInDefault="1" showInStore="1" showInWebsite="1">
+			<label>Instagram Feed</label>
+			<tab>catalog</tab>
+			<resource>MarkHesketh_Instafeed::config_markhesketh_instafeed</resource>
+			<group id="account_info" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>Account Information</label>
+				<field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+					<label>Enabled</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="user_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInStore="1" showInWebsite="1" canRestore="1">
+					<label>User ID</label>
+					<validate>required-entry validate-digits</validate>
+					<comment>If you do not know your user ID, Google "What is my Instagram user ID?". There are several free tools available online that will look it up for you.</comment>
+				</field>
+				<field id="access_token" translate="label" type="text" sortOrder="30" showInDefault="1" showInStore="1" showInWebsite="1" canRestore="1">
+					<label>Access Token</label>
+					<validate>required-entry</validate>
+					<comment>Access Token can be generated here: https://instagram.pixelunion.net/</comment>
+				</field>
+			</group>
+			<group id="feed_display" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label">
+				<label>Feed Display</label>
+				<field id="instafeed_limit" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+					<label>Feed Size</label>
+					<validate>required-entry validate-digits</validate>
+					<comment>Number of Instagram posts to display in the feed</comment>
+				</field>
+				<field id="instafeed_template" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+					<label>Template</label>
+					<comment>HTML template of feed items. Refer to the Instafeed documentation.</comment>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>
